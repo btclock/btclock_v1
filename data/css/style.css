@@ -1,0 +1,73 @@
+nav {
+    margin-bottom: 15px;
+  }
+
+  .splitText div:first-child::after {
+    display: block;
+    content: '';
+    margin-top: 0px;
+    border-bottom: 2px solid;
+    margin-bottom: 3px;
+  }
+
+  #btcclock-wrapper {
+    margin: 0 auto;
+  }
+
+  .btclock {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: stretch;
+    font-family: 'Oswald', sans-serif;
+  }
+
+  .btclock>div {
+    padding: 5px;
+  }
+
+  .fg-ffff .btclock>div {
+    color: #fff;
+    border-color: #fff;
+  }
+
+  .bg-ffff .btclock>div {
+    background: #fff;
+  }
+
+  .fg-f800 .btclock>div {
+    color: #f00;
+    border-color: #f00;
+  }
+
+  .bg-f800 .btclock>div {
+    background: #f00;
+  }
+
+  .fg-0 .btclock>div {
+    color: #000;
+    border-color: #000;
+  }
+
+  .bg-0 .btclock>div {
+    background: #000;
+  }
+
+  .splitText {
+    font-size: 2.2rem;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+  }
+
+  .digit {
+    font-size: 5rem;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .digit-blank {
+    content: "abc";
+  }

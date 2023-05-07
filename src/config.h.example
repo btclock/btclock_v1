@@ -1,0 +1,10 @@
+#define WIFI_SSID ""
+#define WIFI_PASSWORD ""
+
+#define NTP_SERVER "nl.pool.ntp.org"
+
+#define FONT_SMALL Oswald_Regular20pt7b
+#define FONT_BIG Oswald_Regular90pt7b
+
+#define TIME_OFFSET_SECONDS 3600
+#define OTA_PASSWORD "changeme"

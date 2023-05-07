@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/font/oswald.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
+  <script src="/js/handlebars-v4.7.7.js"></script>
+  <title>&#8383;TClock</title>
+</head>
+
+<script src="/js/helpers.js"></script>
+
+<body>
+  <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1">&#8383;TClock</span>
+    </div>
+  </nav>
+  <script id="entry-template" type="text/x-handlebars-template">
+        <div class="entry">
+          <h1>Status</h1>
+          <div class="body">
+            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+              {{#each screens }}
+              <input type="radio" class="btn-check" name="btnradio" id="btnradio{{ @index }}" autocomplete="off" {{#ifEquals @index ../currentScreen }} checked {{/ifEquals}} onclick="changeScreen({{ @index }})">
+              <label class="btn btn-outline-primary" for="btnradio{{ @index }}">{{ this }}</label>
+             {{/each}}
+        
+            </div>
+            <p>Rendered:</p>
+            {{#if rendered }}
+            <div class="btcclock-wrapper" id="btcclock-wrapper">
+              <div class="btclock">
+            {{#each data }}
+              {{{splitText this}}}
+            {{/each}}
+            </div></div>
+            {{/if}}
+          </div>
+        </div>
+      </script>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
+        <div class="h-100 p-3 border bg-light">
+          <h1>Custom text</h1>
+          <form name="customText" id="customTextForm">
+            <div class="row">
+              <label for="customText" class="col-sm-4 col-form-label">Text</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="customText" name="customText" maxlength="7">
+              </div>
+            </div>
+            <footer>
+              <button type="submit" class="btn btn-primary">Show Text</button>
+            </footer>
+          </form>
+        </div>
+      </div>
+      <div class="col">
+        <div id="output" class="p-3 border bg-light"></div>
+      </div>
+      <div class="col">
+        <div class="h-100 p-3 border bg-light">
+          <h1>Settings</h1>
+          <form method="post" action="/api/settings" name="settings" id="settingsForm">
+            <div class="row">
+              <label for="fgColor" class="col-sm-6 col-form-label">Text color</label>
+              <div class="col-sm-6">
+                <select class="form-select" id="fgColor" name="fgColor">
+                  <option value="0xF800">Red</option>
+                  <option value="0xFFFF">White</option>
+                  <option value="0x0">Black</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <label for="bgColor" class="col-sm-6 col-form-label">Background color</label>
+              <div class="col-sm-6">
+                <select class="form-select" id="bgColor" name="bgColor">
+                  <option value="0xF800">Red</option>
+                  <option value="0xFFFF">White</option>
+                  <option value="0x0">Black</option>
+                </select>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-secondary">Reset</button>
+            <button type="submit" class="btn btn-primary">Save</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/js/script.js"></script>
+</body>
+
+</html>
