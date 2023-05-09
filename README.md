@@ -65,6 +65,10 @@ CS wire is <span style="color:blue">blue</span>, BUSY is <span style="color:purp
 | 6 | 4 | 33 |
 | 7 | 15 | 25 |
 
-### Wiring with Wemos S2 Mini (change the pins in functions.cpp)
+#### Wiring with DOIT ESP32 DevKit
+![BTClock](doc/assets/esp32_doit_wiring.png)
+
+
+#### Wiring with Wemos S2 Mini (change the pins in functions.cpp)
 
 ![BTClock](doc/assets/wemos_wiring.png)
