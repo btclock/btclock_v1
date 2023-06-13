@@ -27,7 +27,7 @@ String currentShownTime = "";
 uint32_t moment;
 uint otaProgressValue;
 
-void showMscwTime();
+void showMscwTime();  
 void showBlockHeight();
 void showBtcUsd();
 void showSimpleTime();
